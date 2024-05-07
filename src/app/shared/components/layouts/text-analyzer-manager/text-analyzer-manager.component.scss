@@ -1,0 +1,69 @@
+@import '../../../../../styles/base/variables';
+@import '../../../../../styles/components/button.scss';
+@import '../../../../../styles/components/input.scss';
+
+.analyzer-container-manager {
+  height: 100%;
+
+  form {
+    height: 100%;
+  }
+
+  .analyzer-form-input {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .analyzer-form-input-radio {
+    @extend .analyzer-form-input;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: 12px;
+  }
+
+  .analyzer-form-input:last-child {
+    padding-top: 0;
+  }
+
+  label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 2px;
+    font-family: $font;
+  }
+
+  .analyzer-form-input.textarea {
+    height: 72%;
+    margin-bottom: 8px;
+    textarea {
+      resize: none;
+      height: 100%;
+    }
+  }
+
+  .analyzer-form-button {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    gap: 8px;
+    box-sizing: border-box;
+    padding: 0 8px;
+  }
+
+  .analyzer-error-warning-tempalte {
+    width: 100%;
+    box-sizing: border-box;
+    color: $error-color;
+    margin: 4px 0 0 0 ;
+    margin-top: 4px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .analyzer-form-input.textarea {
+    height: 40%;
+  }
+}

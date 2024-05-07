@@ -1,0 +1,36 @@
+<div class="analyzer-container-manager">
+  <form [formGroup]="textAnyzerForm" (ngSubmit)="onSubmit()">
+    <div class="analyzer-form-input-radio">
+      <div>
+        <label for="include">Vowels</label>
+        <input id="include" type="radio" formControlName="toBe" value="vowels" checked />
+      </div>
+      <div>
+        <label for="exclude">Consonants</label>
+        <input id="exclude" type="radio" formControlName="toBe" value="consonants" />
+      </div>
+    </div>
+    <div class="analyzer-form-input textarea">
+      <label for="text">Text</label>
+      <textarea #textInputRef class="analyzer-textarea" id="text" name="text" type="textarea" formControlName="text"
+        placeholder="Add your text here"></textarea>
+      <ng-container
+        *ngTemplateOutlet="warningMessage; context: textAnyzerForm.get('text')?.touched && textAnyzerForm.get('text')?.errors?.['required'] ?{ warning: errorMessages['text']?.message}: {}">
+      </ng-container>
+      <ng-container *ngTemplateOutlet="warningMessage; context: { warning: requestError && requestError }">
+      </ng-container>
+    </div>
+    <div class="analyzer-form-button">
+      <button class="analyzer-btn contained primary" type="submit"
+        [disabled]="textAnyzerForm.invalid || textAnyzerForm.pristine">Analyze</button>
+      <button class="analyzer-btn contained secondary" type="button" (click)="onReset()">Reset</button>
+      @if(loadingService.loading | async) {
+      <app-spinner></app-spinner>
+      }
+    </div>
+  </form>
+</div>
+
+<ng-template #warningMessage let-warning="warning">
+  <p class="analyzer-error-warning-tempalte">{{warning}}</p>
+</ng-template>

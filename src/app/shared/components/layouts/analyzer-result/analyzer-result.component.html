@@ -1,0 +1,27 @@
+<div class="analyzer-result-header">
+  <h2 class="analyzer-result-list-title">Results</h2>
+  <div>
+    <button (click)="onReset()" class="analyzer-btn circle" aria-label="Clear analyzed result">
+       <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
+</div>
+
+@for(keywordObj of analyzekeywords; track keywordObj.keyIndex){
+  <div class="analyzer-result-list-container">
+    <div class="analyzer-result-list-keyword">
+      <h4>{{keywordObj.keyword}}</h4>
+      <h4>{{keywordObj.totalFrequency | numberComma}}</h4>
+    </div>
+    <ul>
+      @for(letterObj of keywordObj.letters; track letterObj.letter ){
+      <li>
+        <span>{{letterObj.letter}}</span>
+        <span>{{letterObj.frequency}}</span>
+      </li>
+      }
+    </ul>
+  </div>
+} @empty {
+  <div class="analyzer-no-keyword">No keyword Analyzed</div>
+}

@@ -1,0 +1,39 @@
+@import '../../../../styles/base/variables.scss';
+
+.analyzer-toggle-checkbox {
+  display: flex;
+  align-items: baseline;
+
+  input[type="checkbox"] {
+    background-color: #fff;
+    color: $primary-color;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.1em solid $secondary-color;
+    border-radius: 0.15em;
+    display: grid;
+    place-content: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transform: translateY(-0.09em);
+    -moz-transform: translateY(-0.09em);
+    transform: translateY(-0.09em);
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em $secondary-color;
+    background-color: CanvasText;
+    width: 0.6em;
+    height: 0.6em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+} 

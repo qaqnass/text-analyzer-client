@@ -1,0 +1,42 @@
+@import '../../../../styles/base/variables.scss';
+
+.analyzer-spinner-container {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background-color: rgb(66 60 60 / 50%);
+  z-index: 9999;
+
+  .analyzer-spinner {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    border: 6px solid $light-background;
+    border-top: 6px solid $primary-color;
+    -webkit-animation: spinner 1s linear infinite;
+    -moz-animation: spinner 1s linear infinite;
+    animation: spinner 1s linear infinite;
+  }
+
+  @keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+}

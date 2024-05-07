@@ -1,0 +1,55 @@
+@import '../../../../../styles/base/variables.scss';
+@import '../../../../../styles/components/button.scss';
+
+.analyzer-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.analyzer-result-list-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+
+  .analyzer-result-list-title {
+    font-weight: 100;
+    font-family: $font;
+    font-size: 1.3rem;
+    padding: 4px 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 4px;
+      box-sizing: border-box;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  .analyzer-result-list-keyword {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    h4 {
+      margin: 8px 0; 
+      background-color: $light-background;
+    }
+  }
+}
+
+.analyzer-no-keyword {
+  box-sizing: border-box;
+  padding: 2px;
+  font-family: $font;
+  background-color: $light-background;
+}

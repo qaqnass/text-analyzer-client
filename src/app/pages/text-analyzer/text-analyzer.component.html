@@ -1,0 +1,17 @@
+<analyzer-header></analyzer-header>
+<div class="analyzer-component-wrapper">
+  <div class="analyzer-content-title">
+    <h3>Fine your letter frequency</h3>
+    <p>The Letter Counter app is a simple and intuitive tool designed to assist users in efficiently counting the
+      occurrences of each letter within a given text or text input. With its user-friendly interface and robust
+      functionality, users can effortlessly analyze textual content, making it an invaluable resource for various
+      contexts, including writing, editing, and data analysis.</p>
+  </div>
+  <div class="analyzer-content-manager">
+    <app-text-analyzer-manager (lettersFrequencyChange)="onLettersFrequencyChange($event)"></app-text-analyzer-manager>
+  </div>
+  <div class="analyzer-result-list">
+    <app-analyzer-result (resetClicked)="onResetClicked()" [analyzekeywords]="analyzekeywords">
+    </app-analyzer-result>
+  </div>
+</div>
