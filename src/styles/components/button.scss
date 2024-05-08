@@ -1,0 +1,76 @@
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/mixing.scss';
+
+.analyzer-btn {
+   margin: 0;
+   padding: 0;
+   border: none;
+   background: none;
+   color: inherit;
+   font: inherit;
+   line-height: normal;
+   overflow: visible;
+   text-align: left;
+   text-decoration: none;
+   text-indent: 0;
+   text-shadow: none;
+   display: inline-block;
+   vertical-align: baseline;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   cursor: pointer;
+   user-select: none;
+
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: $border-radius-btn;
+  font-family: $font;
+}
+
+.analyzer-btn.contained.primary {
+  background-color: $primary-color;
+  color: #fff
+}
+
+.analyzer-btn.contained.primary:hover, .analyzer-btn.contained.primary:focus {
+  background-color: $primary-color-hover;
+  color: #fff
+}
+
+.analyzer-btn.contained.primary:disabled {
+  background-color: $primary-color-disabled;
+  color: #fff
+}
+
+.analyzer-btn.contained.secondary {
+  background-color: $secondary-color;
+  color: #fff
+}
+
+.analyzer-btn.contained.secondary:hover, .analyzer-btn.contained.secondary:focus {
+  background-color: $secondary-color-hover;
+  color: #fff
+}
+
+.analyzer-btn.circle {
+  padding: 4px;
+  border-radius: 100%;
+  width: 2.2rem;
+  height: 2.2rem;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $box-shadow1;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  -mox-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+
+.analyzer-btn.circle:hover, .analyzer-btn.circle:focus {
+  box-shadow: $box-shadow2;
+  outline: none;
+}

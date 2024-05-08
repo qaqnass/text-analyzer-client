@@ -1,0 +1,19 @@
+
+@import "../base/variables.scss";
+
+  .analyzer-input, .analyzer-textarea {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $border-color;
+    background-color: $light-background;
+    border-radius: $border-radus $border-radus 0 0;
+    box-sizing: border-box;
+    padding: 8px;
+    -webkit-transition: border-color 0.6s;
+    -moz-transition: border-color 0.6s;
+    transition: border-color 0.6s;
+  }
+
+  .analyzer-input:focus, .analyzer-textarea:focus {
+    border-bottom: 2px solid $border-color-active;
+  }
